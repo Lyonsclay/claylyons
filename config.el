@@ -13,4 +13,9 @@
 ;; (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 ;; (key-chord-define evil-insert-state-map "JK" 'evil-normal-state)
 
-(spacemacs/set-leader-keys "wB" (lambda() (interactive) (evil-window-increase-height 5)))
+;; (spacemacs/set-leader-keys "wB" (lambda() (interactive) (evil-window-increase-height 5)))
+;; (defun raise-window ()
+;;   (ineractive)
+;;   (evil-window-increase-height 15))
+
+;; (spacemacs/set-leader-keys "wB" 'raise-window)

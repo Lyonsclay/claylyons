@@ -3,15 +3,13 @@
   `(
     flycheck-dialyxir
     flycheck-dogma
-    multiple-cursors
-    (aj-ruby :excluded t)
-    (lua :excluded t)
-    (aj-typescript :excluded t)
-    (tmux :excluded t)))
+    key-chord
+    multiple-cursors))
+
 
 (defun claylyons/init-flycheck-dialyxir ()
-   (use-package flycheck-dialyxir
-     :defer t))
+  (use-package flycheck-dialyxir
+    :defer t))
 
 (defun claylyons/init-flycheck-dogma ()
   (use-package flycheck-dogma
@@ -37,9 +35,20 @@
   (use-package dired-x
     :defer t
     :config
-    ;; (add-hook 'dired-mode-hook
-    ;;           (lambda ()
-    ;;             ;; Set dired-x buffer-local variables here.  For example:
-    ;;             (dired-omit-mode 1)))
+    (add-hook 'dired-mode-hook
+              (lambda ()
+                ;; Set dired-x buffer-local variables here.  For example:
+                (dired-omit-mode 1)))
     (setq-default dired-omit-files-p t) ; Buffer-local variable
     '(dired-omit-files "^\\.?#\\|\\.DS_Store")))
+
+
+;; doesn't work outside of parent init.el ??
+;; (defun claylyons/init-claylyons ()
+;;   (use-package claylyons
+;;     :init
+;;     (progn
+;;       (key-chord-mode +1)
+;;       (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+;;       (key-chord-define evil-insert-state-map "JK" 'evil-normal-state)
+;;       "worker bee")))

@@ -10,4 +10,11 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-(setq evil-escape-key-sequence "jk")
+;; (setq evil-escape-key-sequence "jk")
+
+;; doesn't work outside parent init.el ??
+;; (defun claylyons/raise-window ()
+;;   (interactive) (evil-window-increase-height 15))
+
+;; ;; (spacemacs/set-leader-keys "wB" (lambda() (interactive) (evil-window-increase-height 5)))
+;; (spacemacs/set-leader-keys "wB" #'claylyons/raise-window)
