@@ -1,3 +1,4 @@
 (configuration-layer/declare-layers
  '(
-   c-c++ themes-megapack))
+   c-c++
+   themes-megapack))
