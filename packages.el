@@ -1,13 +1,21 @@
 (defconst claylyons-packages
 
   `(
+    flycheck-dialyxir
+    flycheck-dogma
     multiple-cursors
     (aj-ruby :excluded t)
     (lua :excluded t)
     (aj-typescript :excluded t)
     (tmux :excluded t)))
 
+(defun claylyons/init-flycheck-dialyxir ()
+   (use-package flycheck-dialyxir
+     :defer t))
 
+(defun claylyons/init-flycheck-dogma ()
+  (use-package flycheck-dogma
+    :defer t))
 
 (defun claylyons/init-multiple-cursors ()
   (use-package multiple-cursors
