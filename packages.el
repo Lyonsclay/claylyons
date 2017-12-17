@@ -2,8 +2,11 @@
 
   `(
     multiple-cursors
-    (tmux :excluded t)
-    dired-x))
+    (aj-ruby :excluded t)
+    (lua :excluded t)
+    (aj-typescript :excluded t)
+    (tmux :excluded t)))
+
 
 
 (defun claylyons/init-multiple-cursors ()
