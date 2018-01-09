@@ -4,8 +4,8 @@
             (interactive)
             (when (and (buffer-file-name) (buffer-modified-p))
               (save-buffer))))
-(add-hook 'dired-load-hook
-          (function (lambda () (load "dired-x"))))
+;; (add-hook 'dired-load-hook
+;;           (function (lambda () (load "dired-x"))))
 
 ;;-----remapping the esc key with key-chord---------
 ;; (require 'key-chord)
