@@ -10,6 +10,15 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
+
+(global-set-key (kbd "M-[") 'insert-pair)
+(global-set-key (kbd "M-{") 'insert-pair)
+(global-set-key (kbd "M-\"") 'insert-pair)
+(global-set-key (kbd "M-\'") 'insert-pair)
+(global-set-key (kbd "M-(") 'insert-pair)
+(global-set-key (kbd "M-`") 'insert-pair)
+(global-set-key (kbd "M-)") 'delete-pair)
+
 ;; (setq evil-escape-key-sequence "jk")
 
 ;; doesn't work outside parent init.el ??

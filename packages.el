@@ -1,9 +1,9 @@
 (defconst claylyons-packages
 
   `(
-    flycheck-dialyxir
-    flycheck-dogma
-    key-chord
+    ;; flycheck-dialyxir
+    ;; flycheck-dogma
+    ;; key-chord
     multiple-cursors))
 
 
@@ -36,11 +36,12 @@
     :defer t
     :config
     (add-hook 'dired-mode-hook
-              (lambda ()
+              #'(lambda ())
                 ;; Set dired-x buffer-local variables here.  For example:
-                (dired-omit-mode 1)))
-    (setq-default dired-omit-files-p t) ; Buffer-local variable
-    '(dired-omit-files "^\\.?#\\|\\.DS_Store")))
+                '(dired-omit-mode 1)
+                '(dired-omit-files "^\\.?#\\|\\.DS_Store"))))
+
+
 
 
 ;; doesn't work outside of parent init.el ??
