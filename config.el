@@ -1,9 +1,14 @@
 ;; Package claylyons spacemacs config layer.
-(add-hook 'focus-out-hook
-          (defun save-current-buffer-if-needed ()
-            (interactive)
-            (when (and (buffer-file-name) (buffer-modified-p))
-              (save-buffer))))
+(defun save-all ()
+  (interactive)
+  (save-some-buffers t))
+
+(add-hook 'focus-out-hook 'save-all)
+;; (add-hook 'focus-out-hook
+;;           (defun save-current-buffer-if-needed ()
+;;             (interactive)
+;;             (when (and (buffer-file-name) (buffer-modified-p))
+;;               (save-buffer))))
 ;; I prefer that Dired remember my omit state: when enabling/disabling ‘omit-mode’,
 ;; the ‘omit-mode’ remains enabled/disabled in another Dired buffer. This code does that:
 ;; https://www.emacswiki.org/emacs/DiredOmitMode

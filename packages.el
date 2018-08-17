@@ -69,3 +69,44 @@
       (key-chord-define-global "jk" 'evil-normal-state)
       (key-chord-define-global "JK" 'evil-normal-state)
       )))
+
+(defun claylyons/init-windmove ()
+  (use-package windmove
+    :init
+    (windmove-default-keybindings 'super)
+    :config
+    (progn
+      ;; automatically save buffers associated with files on buffer switch
+      ;; and on windows switch
+      (defadvice switch-to-buffer (before save-buffer-now activate)
+        (when buffer-file-name (save-buffer)))
+      (defadvice other-window (before other-window-now activate)
+        (when buffer-file-name (save-buffer)))
+      (defadvice windmove-up (before other-window-now activate)
+        (when buffer-file-name (save-buffer)))
+      (defadvice windmove-down (before other-window-now activate)
+        (when buffer-file-name (save-buffer)))
+      (defadvice windmove-left (before other-window-now activate)
+        (when buffer-file-name (save-buffer)))
+      (defadvice windmove-right (before other-window-now activate)
+        (when buffer-file-name (save-buffer)))
+      )))
+
+;; ;; use shift + arrow keys to switch between visible buffers
+;; (require 'windmove)
+;; (windmove-default-keybindings 'super)
+
+;; ;; automatically save buffers associated with files on buffer switch
+;; ;; and on windows switch
+;; (defadvice switch-to-buffer (before save-buffer-now activate)
+;;   (when buffer-file-name (save-buffer)))
+;; (defadvice other-window (before other-window-now activate)
+;;   (when buffer-file-name (save-buffer)))
+;; (defadvice windmove-up (before other-window-now activate)
+;;   (when buffer-file-name (save-buffer)))
+;; (defadvice windmove-down (before other-window-now activate)
+;;   (when buffer-file-name (save-buffer)))
+;; (defadvice windmove-left (before other-window-now activate)
+;;   (when buffer-file-name (save-buffer)))
+;; (defadvice windmove-right (before other-window-now activate)
+;;   (when buffer-file-name (save-buffer)))
