@@ -47,8 +47,8 @@
   (evil-window-increase-height 15))
 (spacemacs/set-leader-keys "wB" 'raise-window)
 
-(add-hook 'reason-mode-hook (lambda ())
-            (add-hook 'before-save-hook 'refmt-before-save))
+;; (add-hook 'reason-mode-hook (lambda ())
+;;             (add-hook 'before-save-hook 'refmt-before-save))
  
 (let ((opam-share (ignore-errors (car (process-lines "opam" "config" "var" "share")))))
   (when (and opam-share (file-directory-p opam-share))
